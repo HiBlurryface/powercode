@@ -1,13 +1,98 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/fonts.css">
     <title>powercode</title>
 </head>
+
 <body>
-    <h1>re</h1>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container container">
+                <div class="header__logo">
+                    <img src="img/logo.svg" alt="logo" class="header__logo-img">
+                </div>
+                <div class="header__info">
+                    <div class="header__info-block">
+                        <img src="img/calendar_icon.svg" alt="calendar" class="header__info-icon">
+                        <p class="header__info-text">28 декабря</p>
+                    </div>
+                    <div class="header__info-block">
+                        <img src="img/clock_icon.svg" alt="clock" class="header__info-icon">
+                        <p class="header__info-text">3,5 часа</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="main__container container">
+                <div class="info">
+                    <p class="info__tag">
+                        <img src="img/globe_icon.svg" alt="globe" class="info__tag-icon">
+                        Вебинар
+                    </p>
+                    <h1 class="info__title">Front-End</h1>
+                    <h2 class="info__subtitle"><span>С нуля </span>легкий старт в IT профессии</h2>
+                    <p class="info__text">Узнайте какими <span>навыками должен обладать фронтенд разработчик в 2022
+                            году</span> и как
+                        начать карьеру в востребованной профессии </p>
+                    <div class="info__bottom">
+                        <div class="info__group">
+                            <div class="info__group-photo">
+                                <img src="img/photo.svg" alt="photo of autor" class="info__group-img">
+                            </div>
+                            <div class="info__group-info">
+                                <h3 class="info__group-title author">КИРИЛЛ <span>КАСАТОНОВ</span></h3>
+                                <p class="info__group-text">6 лет коммерческого опыта с такими компаниями как
+                                    Mercedes-Benz и другими крупными корпорациями</p>
+                            </div>
+                        </div>
+                        <div class="info__group">
+                            <div class="info__group-photo gift">
+                                <img src="img/gift.svg" alt="gift icon" class="info__group-img">
+                            </div>
+                            <div class="info__group-info">
+                                <h3 class="info__group-title bonus">Бонус за регистрацию</h3>
+                                <p class="info__group-text lh18">PDF-файл "5 преимуществ <br> профессии фронтенд
+                                    разработчика"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="join">
+                    <div class="join__container container">
+                        <h2 class="join__title">Запишитесь <span>бесплатно</span> и получите подарок</h2>
+                        <form action="#" class="form">
+                            <div class="form__group">
+                                <input type="text" class="form__input" id="name" placeholder="">
+                                <label for="name" class="form__label">Ваше имя и фамилия</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="text" class="form__input" id="phone" placeholder="">
+                                <label for="phone" class="form__label">Ваш номер телефона</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="text" class="form__input" id="email" placeholder="">
+                                <label for="email" class="form__label">Ваш email</label>
+                            </div>
+                            <button class="form__btn" type="submit">Записаться бесплатно</button>
+                        </form>
+                        <div class="join__footer">
+                            <p class="join__text">Нажимая на кнопку я согашаюсь
+                                <a href="#" class="join__link">
+                                    с политикой конфидециальности
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
+
 </html>

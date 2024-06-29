@@ -1,0 +1,27 @@
+.header {
+    padding: 34px 0;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__info {
+        display: flex;
+        gap: 20px;
+        &-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6.5px;
+            background: #302E5A;
+            border-radius: 10px;
+            // padding: 12.5px 22.5px;
+            min-width: 141px;
+            min-height: 40px;
+        }
+        &-text {
+            color: white;
+        }
+    }
+}
