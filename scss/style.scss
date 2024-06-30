@@ -14,17 +14,25 @@ body {
 .wrapper {
     position: relative;
     height: 100%;
-    overflow: hidden;
+    overflow: visible;
+    overflow-x: hidden;
 }
 .main {
-    margin-top: 82px;
-
+    padding-bottom: 82px;
+    @media (min-width: 1025px) {
+        margin-top: 82px;
+    }
     &__container {
         display: flex;
         justify-content: space-between;
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }
 .banner {
+    z-index: -1;
     position: absolute;
     left: 0;
     width: 100%;
@@ -37,6 +45,7 @@ body {
     text-transform: uppercase;
     -webkit-text-stroke: 1.6px rgba(255, 255, 255, 0.05);
     -webkit-text-fill-color: transparent;
+    pointer-events: none;
     @media screen and (max-height: 840px) {
         display: none;
     }
@@ -71,7 +80,9 @@ body {
         font-size: 16px;
         line-height: 24px;
         background: #4252D1;
-
+        @media (max-width: 1024px) {
+            margin: 0px auto;
+        }
         &-icon {
             padding: 0 6.3px 0 15px;
         }
@@ -188,7 +199,10 @@ body {
     border-radius: 10px;
     padding: 50px 39px;
     position: relative;
-
+    @media (max-width: 1024px) {
+        margin-top: 60px;
+        max-width: 427px;
+    }
     &__bg {
         top: 35px;
         right: -233px;
