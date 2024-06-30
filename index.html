@@ -68,14 +68,17 @@
                         <h2 class="join__title">Запишитесь <span>бесплатно</span> и получите подарок</h2>
                         <form action="#" class="form">
                             <div class="form__group">
+                                <span class="form__error">Пустое поле</span>
                                 <input type="text" class="form__input" id="name" placeholder="">
                                 <label for="name" class="form__label">Ваше имя и фамилия</label>
                             </div>
                             <div class="form__group">
+                                <span class="form__error">Пустое поле</span>
                                 <input type="text" class="form__input" id="phone" placeholder="">
                                 <label for="phone" class="form__label">Ваш номер телефона</label>
                             </div>
-                            <div class="form__group">
+                            <div class="form__group"> 
+                                <span class="form__error" id="email-error">Пустое поле</span>
                                 <input type="text" class="form__input" id="email" placeholder="">
                                 <label for="email" class="form__label">Ваш email</label>
                             </div>
@@ -97,6 +100,10 @@
     </div>
     <img src="img/gradient-left.png" alt="gradient" class="gradient gradient__left">
     <img src="img/gradient-right.png" alt="gradient" class="gradient gradient__right">
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -656,6 +656,19 @@ body {
     height: 46px;
   }
 }
+.form__group.error > .form__error {
+  display: block;
+}
+.form__error {
+  position: absolute;
+  top: -20px;
+  left: 0px;
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #FF3459;
+  display: none;
+}
 .form__input {
   padding: 0 21px;
   width: 100%;
