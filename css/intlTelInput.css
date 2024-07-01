@@ -26,6 +26,7 @@
 .iti {
   position: absolute;
   width: 100%;
+  display: flex;
   height: 100%;
 }
 
@@ -88,19 +89,15 @@
 }
 
 .iti__selected-flag {
-  position: absolute;
+  height: 100%;
+  max-width: 85px;
   display: flex;
   align-items: center;
-  left: 20px;
-  top: 13px;
+  z-index: 100;
+  cursor: pointer;
+  padding-left: 20px;
+  position: relative;
 }
-
-@media (max-width:425px) {
-  .iti__selected-flag {
-    top: 11px !important;
-  }
-}
-
 .iti__selected-country-primary {
   display: flex;
   align-items: center;
@@ -155,6 +152,8 @@
   list-style: none;
   padding: 8px 12px;
   margin: 0;
+  border-radius: 5px;
+  top: -5px;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
@@ -175,6 +174,11 @@
   .iti--flexible-dropdown-width .iti__country-list {
     white-space: normal;
   }
+}
+
+.iti__flag-container {
+  height: 100%;
+  width: 100%;
 }
 
 .iti__flag-box {
@@ -296,6 +300,9 @@
 }
 
 .iti__flag {
+  width: 20px;
+  flex: 0 0 auto;
+  height: 14px;
   --iti-flag-offset: 0px;
   --iti-flag-width: 20px;
   --iti-flag-height: 14px;

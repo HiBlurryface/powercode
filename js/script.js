@@ -109,4 +109,9 @@ document.addEventListener('DOMContentLoaded', function () {
         separateDialCode: true,
         utilsScript: '/utils.js'
     })
+    input.oninput = function() {
+        if (this.value.match(/[^0-9,+]/g)) {
+            this.value = this.value.replace(/[^0-9,+]/g, "");
+        };
+    }
 })

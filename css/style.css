@@ -755,8 +755,8 @@ body {
   line-height: 21px;
 }
 .form__input.phone {
-  padding: 0 !important;
-  margin-left: 81px !important;
+  padding-left: 85px !important;
+  margin: 0 !important;
 }
 .form__label {
   transition: 0.3s ease;
