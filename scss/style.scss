@@ -4,7 +4,9 @@
 @import "_styles";
 @import "_header";
 
-html, body, .wrapper, .container {
+html,
+body,
+.wrapper {
     overflow-x: hidden !important;
 }
 
@@ -27,6 +29,7 @@ body {
     @media (min-width: 1025px) {
         margin-top: 82px;
     }
+
     &__container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -357,6 +360,7 @@ body {
         right: -233px;
         position: absolute;
         z-index: 100;
+
         @media (max-width: 520px) {
             display: none;
         }
@@ -414,6 +418,7 @@ body {
         pointer-events: none;
         opacity: 0.5;
     }
+
     &__group {
         position: relative;
         background: #272D3D;
@@ -480,7 +485,7 @@ body {
         }
 
         &.phone {
-            padding-left: 85px !important; 
+            padding-left: 85px !important;
             margin: 0 !important;
         }
     }
@@ -534,6 +539,7 @@ body {
     }
 
     &__success {
+        width: max-content;
         top: -100px;
         transition: 0.3s ease;
         position: fixed;
@@ -546,11 +552,13 @@ body {
         color: #fff;
         padding: 24px 36px;
         border-radius: 6px;
+
         @media (max-width: 425px) {
             padding: 16px 24px;
             font-size: 15px;
             line-height: 9px;
         }
+
         &.active {
             transition: 0.6s ease;
             top: 20px;

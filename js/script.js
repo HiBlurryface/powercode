@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var errorEmail = document.getElementById('email-error');
     var errorPhone = document.getElementById('phone-error');
     var phoneParent = document.querySelector('.phone-parent');
+
+    var emailInput = document.getElementById('email')
+    var nameInput = document.getElementById('name')
+    var phoneInput = document.getElementById('phone')
+
     var errorEmailMessage = '';
     var errorPhoneMessage = '';
     var result = document.querySelector('.form__success');
@@ -19,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         separateDialCode: true,
         utilsScript: '/utils.js'
     })
-    input.oninput = function() {
+    input.oninput = function () {
         if (this.value.match(/[^0-9,+]/g)) {
             this.value = this.value.replace(/[^0-9,+]/g, "");
         };
@@ -48,13 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         result.classList.add('active');
                     }
                 })
-            .then(function () {
-                form.reset();
-                setTimeout(() => {
-                    result.classList.remove('active');
-                }, 3000);
-                form.classList.remove('locked')
-            });
+                .then(function () {
+                    form.reset();
+                    setTimeout(() => {
+                        result.classList.remove('active');
+                    }, 3000);
+                    form.classList.remove('locked')
+                });
         }
     }
 
@@ -114,4 +119,51 @@ document.addEventListener('DOMContentLoaded', function () {
         input.parentElement.classList.add('error')
         input.classList.add('error')
     }
+
+    emailInput.addEventListener('blur', function () {
+        if (this.value.length < 1) {
+            formAddError(this)
+            errorEmailMessage = 'Пустое поле'
+        } else if (!regex.test(this.value) && this.value.length > 1) {
+            formAddError(this)
+            errorEmailMessage = 'Неправильный email'
+        } else {
+            formRemoveError(this)
+        }
+        errorEmail.textContent = errorEmailMessage;
+    })
+    emailInput.addEventListener('blur', function () {
+        if (this.value.length < 1) {
+            formAddError(this)
+            errorEmailMessage = 'Пустое поле'
+        } else if (!regex.test(this.value) && this.value.length > 1) {
+            formAddError(this)
+            errorEmailMessage = 'Неправильный email'
+        } else {
+            formRemoveError(this)
+        }
+        errorEmail.textContent = errorEmailMessage;
+    })
+    nameInput.addEventListener('blur', function () {
+        if (this.value.length < 1) {
+            formAddError(this);
+        } else {
+            formRemoveError(this)
+        }
+    })
+    phoneInput.addEventListener('blur', function () {
+        if (this.value.length < 1) {
+            this.classList.add('error')
+            phoneParent.classList.add('error')
+            errorPhoneMessage = 'Пустое поле';
+        } else if (!iti.isValidNumber()) {
+            this.classList.add('error')
+            phoneParent.classList.add('error')
+            errorPhoneMessage = 'Неправильный номер телефона';
+        } else {
+            formRemoveError(this)
+            phoneParent.classList.remove('error')
+        }
+        errorPhone.textContent = errorPhoneMessage;
+    })
 })

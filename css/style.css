@@ -284,7 +284,9 @@ input::-webkit-outer-spin-button {
   }
 }
 
-html, body, .wrapper, .container {
+html,
+body,
+.wrapper {
   overflow-x: hidden !important;
 }
 
@@ -812,6 +814,8 @@ body {
   }
 }
 .form__success {
+  width: -moz-max-content;
+  width: max-content;
   top: -100px;
   transition: 0.3s ease;
   position: fixed;
