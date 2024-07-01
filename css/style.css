@@ -694,6 +694,12 @@ body {
   line-height: 21px;
   transition: 0.3s ease;
 }
+.form__input::-moz-placeholder {
+  color: #D7D7D7;
+}
+.form__input::placeholder {
+  color: #D7D7D7;
+}
 .form__input:not(:-moz-placeholder-shown) ~ .form__label {
   top: 0px;
   font-size: 10px;
@@ -703,6 +709,10 @@ body {
   top: 0px;
   font-size: 10px;
   line-height: 21px;
+}
+.form__input.phone {
+  padding: 0 !important;
+  margin-left: 81px !important;
 }
 .form__label {
   transition: 0.3s ease;
@@ -724,6 +734,9 @@ body {
     line-height: 21.51px;
     padding: 0 26px;
   }
+}
+.form__label.phone {
+  left: 63px;
 }
 .form__btn {
   width: 100%;

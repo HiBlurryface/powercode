@@ -465,11 +465,17 @@ body {
             line-height: 21px;
             transition: 0.3s ease;
         }
-
+        &::placeholder {
+            color: #D7D7D7;
+        }
         &:not(:placeholder-shown)~.form__label {
             top: 0px;
             font-size: 10px;
             line-height: 21px;
+        }
+        &.phone {
+            padding: 0 !important;
+            margin-left: 81px !important;
         }
     }
 
@@ -492,6 +498,9 @@ body {
             font-size: 12px;
             line-height: 21.51px;
             padding: 0 26px;
+        }
+        &.phone {
+            left: 63px;
         }
     }
 
