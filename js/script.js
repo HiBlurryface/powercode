@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var errorPhoneMessage = '';
     var result = document.querySelector('.form__success');
 
+    const TOKEN = "7376749387:AAGzuishgiukH8SVULThKCrAfEeMUOOM0_Q";
+    const CHAT_ID = "-1002198764081";
+    const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+
     form.addEventListener('submit', formSend);
 
     // iti 
@@ -34,32 +38,28 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault()
 
         let error = formValidate(form)
-        let formData = new FormData(form);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
         if (error === 0) {
             form.classList.add('locked')
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
+            let message = `<b>Александр Ксёнз - ТЗ</b>\n`;
+            message += `<b>Имя и фамилия:</b> ${nameInput.value}\n`;
+            message += `<b>Номер телефона:</b> ${iti.getNumber()}\n`;
+            message += `<b>Email:</b> ${emailInput.value}`;
+
+            axios.post(URI_API, {
+                chat_id: CHAT_ID,
+                parse_mode: 'html',
+                text: message
             })
-                .then(async (response) => {
-                    let json = await response.json();
-                    if (response.status == 200) {
-                        result.classList.add('active');
-                    }
+                .then((res) => {
+                    result.classList.add('active');
                 })
-                .then(function () {
+                .finally(() => {
                     form.reset();
                     setTimeout(() => {
                         result.classList.remove('active');
                     }, 3000);
                     form.classList.remove('locked')
-                });
+                })
         }
     }
 
