@@ -95,6 +95,12 @@
   top: 13px;
 }
 
+@media (max-width:425px) {
+  .iti__selected-flag {
+    top: 11px !important;
+  }
+}
+
 .iti__selected-country-primary {
   display: flex;
   align-items: center;
@@ -152,6 +158,7 @@
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
+
 .iti__country-list::-webkit-scrollbar {
   display: none;
 }

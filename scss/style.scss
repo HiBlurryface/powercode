@@ -415,6 +415,10 @@ body {
 }
 
 .form {
+    &.locked {
+        pointer-events: none;
+        opacity: 0.5;
+    }
     &__group {
         position: relative;
         background: #272D3D;
@@ -427,10 +431,12 @@ body {
             border-radius: 4.48px;
             height: 46px;
         }
-        &.error >.form__error {
+
+        &.error>.form__error {
             display: block;
         }
     }
+
     &__error {
         position: absolute;
         top: -20px;
@@ -441,6 +447,7 @@ body {
         color: #FF3459;
         display: none;
     }
+
     &__input {
         padding: 0 21px;
         width: 100%;
@@ -459,20 +466,24 @@ body {
             line-height: 21.51px;
             padding: 0 26px;
         }
+
         &:focus~.form__label {
             top: 0px;
             font-size: 10px;
             line-height: 21px;
             transition: 0.3s ease;
         }
+
         &::placeholder {
             color: #D7D7D7;
         }
+
         &:not(:placeholder-shown)~.form__label {
             top: 0px;
             font-size: 10px;
             line-height: 21px;
         }
+
         &.phone {
             padding: 0 !important;
             margin-left: 81px !important;
@@ -499,6 +510,7 @@ body {
             line-height: 21.51px;
             padding: 0 26px;
         }
+
         &.phone {
             left: 63px;
         }
@@ -523,6 +535,25 @@ body {
             border-radius: 4.48px;
             font-size: 14px;
             line-height: 21.51px;
+        }
+    }
+
+    &__success {
+        top: -65px;
+        transition: 0.3s ease;
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background: #303A53;
+        font-size: 19px;
+        line-height: 14px;
+        font-weight: 600;
+        color: #fff;
+        padding: 24px 36px;
+        border-radius: 6px;
+        &.active {
+            transition: 0.6s ease;
+            top: 20px;
         }
     }
 }

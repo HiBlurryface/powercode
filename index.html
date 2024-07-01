@@ -67,23 +67,27 @@
                 <div class="join">
                     <div class="join__container">
                         <h2 class="join__title">Запишитесь <span>бесплатно</span> и получите подарок</h2>
-                        <form action="#" class="form" id="form">
+                        <form action="#" class="form" id="form" method="POST">
+                            <input type="hidden" name="access_key" value="a4fbeeb9-bec2-451d-a6dc-970267bbea99">
                             <div class="form__group">
                                 <span class="form__error">Пустое поле</span>
-                                <input type="text" class="form__input name require" id="name" placeholder="">
+                                <input type="text" class="form__input name require" id="name" name="name" placeholder="">
                                 <label for="name" class="form__label">Ваше имя и фамилия</label>
                             </div>
                             <div class="form__group phone-parent">
                                 <span class="form__error" id="phone-error">Пустое поле</span>
-                                <input type="text" class="form__input phone require" id="phone" placeholder="Ваш номер телефона">
+                                <input type="text" class="form__input phone require" id="phone" name="phone" placeholder="Ваш номер телефона">
                                 <!-- <label for="phone" class="form__label phone">Ваш номер телефона</label> -->
                             </div>
-                            <div class="form__group"> 
+                            <div class="form__group">
                                 <span class="form__error" id="email-error">Пустое поле</span>
-                                <input type="text" class="form__input require" id="email" placeholder="">
+                                <input type="text" class="form__input require" id="email" name="email" placeholder="">
                                 <label for="email" class="form__label">Ваш email</label>
                             </div>
                             <button class="form__btn" type="submit">Записаться бесплатно</button>
+                            <div class="form__success">
+                                <p class="form__success-text">Форма отправлена</p>
+                            </div>
                         </form>
                         <div class="join__footer">
                             <p class="join__text">Нажимая на кнопку я согашаюсь

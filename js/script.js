@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var phoneParent = document.querySelector('.phone-parent');
     var errorEmailMessage = '';
     var errorPhoneMessage = '';
-
+    var result = document.querySelector('.form__success');
 
     form.addEventListener('submit', formSend);
 
@@ -15,17 +15,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let error = formValidate(form)
         let formData = new FormData(form);
-
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
         if (error === 0) {
-            console.log(formData)
-            let response = await fetch('sendmail.php', {
+            form.classList.add('locked')
+            fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                body: formData
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
             })
-            if (response.ok) {
-                let.result = await response.json();
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.classList.add('active');
+                    }
+                })
+            .then(function () {
                 form.reset();
-            }
+                setTimeout(() => {
+                    result.classList.remove('active');
+                }, 3000);
+                form.classList.remove('locked')
+            });
         }
     }
 
@@ -57,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            if(input.id === 'phone') {
+            if (input.id === 'phone') {
                 if (input.value.length < 1) {
                     input.classList.add('error')
                     phoneParent.classList.add('error')
@@ -67,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     input.classList.add('error')
                     phoneParent.classList.add('error')
                     errorPhoneMessage = 'Неправильный номер телефона';
-                    error++;   
+                    error++;
                 } else {
                     phoneParent.classList.remove('error')
                 }
