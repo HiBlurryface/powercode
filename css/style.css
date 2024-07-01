@@ -284,19 +284,21 @@ input::-webkit-outer-spin-button {
   }
 }
 
+html, body, .wrapper, .container {
+  overflow-x: hidden !important;
+}
+
 body {
   position: relative;
   background: #242731;
   font-family: "Gilroy";
   overflow: visible;
-  overflow-x: hidden;
 }
 
 .wrapper {
   position: relative;
   height: 100%;
   overflow: visible;
-  overflow-x: hidden;
 }
 
 .main {
@@ -805,7 +807,7 @@ body {
   }
 }
 .form__success {
-  top: -65px;
+  top: -100px;
   transition: 0.3s ease;
   position: fixed;
   left: 50%;
@@ -817,6 +819,13 @@ body {
   color: #fff;
   padding: 24px 36px;
   border-radius: 6px;
+}
+@media (max-width: 425px) {
+  .form__success {
+    padding: 16px 24px;
+    font-size: 15px;
+    line-height: 9px;
+  }
 }
 .form__success.active {
   transition: 0.6s ease;

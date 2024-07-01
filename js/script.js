@@ -10,6 +10,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     form.addEventListener('submit', formSend);
 
+    // iti 
+    const input = document.querySelector("#phone");
+    var iti = window.intlTelInput(input, {
+        defaultCountry: 'ua',
+        preferredCountries: ['ua'],
+        nationalMode: true,
+        separateDialCode: true,
+        utilsScript: '/utils.js'
+    })
+    input.oninput = function() {
+        if (this.value.match(/[^0-9,+]/g)) {
+            this.value = this.value.replace(/[^0-9,+]/g, "");
+        };
+    }
+
     async function formSend(e) {
         e.preventDefault()
 
@@ -98,20 +113,5 @@ document.addEventListener('DOMContentLoaded', function () {
     function formAddError(input) {
         input.parentElement.classList.add('error')
         input.classList.add('error')
-    }
-
-    // iti 
-    const input = document.querySelector("#phone");
-    var iti = window.intlTelInput(input, {
-        defaultCountry: 'ua',
-        preferredCountries: ['ua'],
-        nationalMode: true,
-        separateDialCode: true,
-        utilsScript: '/utils.js'
-    })
-    input.oninput = function() {
-        if (this.value.match(/[^0-9,+]/g)) {
-            this.value = this.value.replace(/[^0-9,+]/g, "");
-        };
     }
 })
