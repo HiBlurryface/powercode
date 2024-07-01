@@ -639,6 +639,11 @@ body {
   position: absolute;
   z-index: 100;
 }
+@media (max-width: 520px) {
+  .join__bg {
+    display: none;
+  }
+}
 .join__title {
   font-size: 22px;
   line-height: 26px;

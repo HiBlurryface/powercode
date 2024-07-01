@@ -357,6 +357,9 @@ body {
         right: -233px;
         position: absolute;
         z-index: 100;
+        @media (max-width: 520px) {
+            display: none;
+        }
     }
 
     &__title {
