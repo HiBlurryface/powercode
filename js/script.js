@@ -15,9 +15,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let error = formValidate(form)
         let formData = new FormData(form);
-        console.log(error)
+
         if (error === 0) {
             console.log(formData)
+            let response = await fetch('sendmail.php', {
+                method: 'POST',
+                body: formData
+            })
+            if (response.ok) {
+                let.result = await response.json();
+                form.reset();
+            }
         }
     }
 
