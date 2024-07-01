@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var form = document.getElementById('form');
     var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    var form = document.getElementById('form');
+    var result = document.querySelector('.form__success');
+
     var errorEmail = document.getElementById('email-error');
     var errorPhone = document.getElementById('phone-error');
     var phoneParent = document.querySelector('.phone-parent');
@@ -11,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var errorEmailMessage = '';
     var errorPhoneMessage = '';
-    var result = document.querySelector('.form__success');
 
     const TOKEN = "7376749387:AAGzuishgiukH8SVULThKCrAfEeMUOOM0_Q";
     const CHAT_ID = "-1002198764081";
@@ -120,18 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
         input.classList.add('error')
     }
 
-    emailInput.addEventListener('blur', function () {
-        if (this.value.length < 1) {
-            formAddError(this)
-            errorEmailMessage = 'Пустое поле'
-        } else if (!regex.test(this.value) && this.value.length > 1) {
-            formAddError(this)
-            errorEmailMessage = 'Неправильный email'
-        } else {
-            formRemoveError(this)
-        }
-        errorEmail.textContent = errorEmailMessage;
-    })
     emailInput.addEventListener('blur', function () {
         if (this.value.length < 1) {
             formAddError(this)
